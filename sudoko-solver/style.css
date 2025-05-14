@@ -1,0 +1,73 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+#sudoku-board {
+  display: grid;
+  grid-template-columns: repeat(9, 40px);
+  grid-template-rows: repeat(9, 40px);
+  border: 3px solid black;
+  box-sizing: border-box;
+}
+
+input {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+input.user-input {
+  color: black;
+}
+
+input.solved {
+  color: green;
+}
+
+/* Add thick borders between sub-grids */
+
+#sudoku-board input {
+  border: 1px solid #ccc;
+}
+
+#sudoku-board input {
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+}
+
+#sudoku-board input:nth-child(9n+1),
+#sudoku-board input:nth-child(9n+4),
+#sudoku-board input:nth-child(9n+7) {
+
+  border-left: 3px solid black;
+}
+
+
+#sudoku-board input:nth-child(n+1):nth-child(-n+9),
+#sudoku-board input:nth-child(n+28):nth-child(-n+36),
+#sudoku-board input:nth-child(n+55):nth-child(-n+63) {
+  border-top: 3px solid black;
+}
+
+#sudoku-board input:nth-child(3n) {
+  border-right: 3px solid black;
+}
+
+#sudoku-board input:nth-child(81n) {
+  border-bottom: 3px solid black;
+}
+
+.btns {
+  margin-top: 20px;
+}
